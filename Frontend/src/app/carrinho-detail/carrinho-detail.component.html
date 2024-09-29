@@ -1,0 +1,17 @@
+<h2>Carrinho de {{currentUser?.name}}</h2>
+<br>
+<ul>
+    <li *ngFor="let citem of currentUser?.carrinho">
+        {{citem.split('|')[0]}} &nbsp;&nbsp;&nbsp;&nbsp; {{citem.split('|')[1]}} &nbsp; 
+        <button type="button" (click)="incItem(citem)">+</button>
+        <button type="button" (click)="decItem(citem)">-</button>
+    </li>
+    <p>{{message}}</p>
+</ul>
+<div class="button">
+    <button (click)="dashboard()">Dashboard</button>
+</div>
+
+<div class="button">
+    <button (click)="checkoutPage()">Checkout</button>
+</div>

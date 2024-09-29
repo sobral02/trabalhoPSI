@@ -1,0 +1,9 @@
+<h1>Lista de seguidores do {{name}}</h1>
+<div class="followers-container">
+    {{message}}
+    <button (click)="goToUser(follower)"*ngFor="let follower of followers">{{follower}}</button>
+</div>
+
+<div class="button">
+    <button (click)="dashboard()">Dashboard</button>
+</div>

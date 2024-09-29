@@ -1,0 +1,46 @@
+<div class="edit-profile">
+    <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit()" class="edit-profile-form">
+        <div class="form-group">
+            <label for="username">Nome de usuário:</label>
+            <input type="text" id="username" formControlName="username" class="username-input" />
+
+            <div *ngIf="
+          usernameControl?.errors &&
+          (usernameControl?.touched || usernameControl?.dirty)
+        " class="error-messages">
+                <div *ngIf="usernameControl?.errors?.['minlength']">
+                    O nome de usuário deve ter pelo menos 3 caracteres.
+                </div>
+                <div *ngIf="usernameControl?.errors?.['pattern']">
+                    O nome de usuário deve conter apenas caracteres alfanuméricos.
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="save-changes-button">Alterar nome</button>
+
+        <!-- Substituir a seção de imagem de perfil por uma seleção de ícones -->
+        <div class="form-group">
+            <label>Ícones de perfil:</label>
+            <div class="icons-display">
+                <img tabindex="0" [src]="'assets/icons/icon1.png'" [class.icon-selected]="selectedIcon === 'icon1.png'" alt="" (click)="onIconSelected('icon1.png')" (keyup.enter)="onIconSelected('icon1.png')" />
+                <img tabindex="0" [src]="'assets/icons/icon2.png'" [class.icon-selected]="selectedIcon === 'icon2.png'" alt="" (click)="onIconSelected('icon2.png')" (keyup.enter)="onIconSelected('icon2.png')" />
+                <img tabindex="0" [src]="'assets/icons/icon3.png'" [class.icon-selected]="selectedIcon === 'icon3.png'" alt="" (click)="onIconSelected('icon3.png')" (keyup.enter)="onIconSelected('icon3.png')" />
+                <img tabindex="0" [src]="'assets/icons/icon4.png'" [class.icon-selected]="selectedIcon === 'icon4.png'" alt="" (click)="onIconSelected('icon4.png')" (keyup.enter)="onIconSelected('icon4.png')" />
+            </div>
+
+            <button type="button" class="save-icon-changes-button" (click)="onIconSubmit()">
+        Alterar ícone de perfil
+      </button>
+        </div>
+    </form>
+
+    <div class="button">
+        <button (click)="goToDashboard()" class="dashboard-button">
+      Ir para o Dashboard
+    </button>
+        <button (click)="goToUserProfile()" class="profile-button">
+      Voltar para o perfil
+    </button>
+    </div>
+</div>

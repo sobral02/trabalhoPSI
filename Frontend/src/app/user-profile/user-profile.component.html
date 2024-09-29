@@ -1,0 +1,29 @@
+<div *ngIf="user" class="profile">
+    <div class="profile-header">
+        <img class="profile-picture" [src]="'assets/icons/' + user.profilePicture" alt="" />
+        <div class="profile-container">
+            <h1 class="profile-name">{{ user.name }}</h1>
+            <button class="follow-button" *ngIf="!following" (click)="followUser()">Follow</button>
+            <button class="follow-button" *ngIf="following" (click)="unfollowUser()">Unfollow</button>
+        </div>
+
+    </div>
+
+    <div class="profile-links">
+
+        <h2 class="profile-subtitle">Minhas Listas</h2>
+        <div class ="button-container">
+            <button (click)="goToLibrary()">Minha Biblioteca</button>
+            <button (click)="goToWishlist()">Wishlist</button>
+            <button href="#">Listas Personalizadas</button>
+            <button (click)="goToFollowers()">Seguidores: {{userFollowers}}</button>
+            <button (click)="goToFollowing()">Seguindo: {{user.followingLists.length}}</button>
+        </div>
+    </div>
+    <div *ngIf="this.currentUser?.name==this.user?.name" class="editarButton">
+        <button (click)="editProfile()">Editar perfil</button>
+    </div>
+    <div class="button">
+        <button (click)="dashboard()">Dashboard</button>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div *ngIf="item" class="item-details">
+  <div class="item-header">
+    <img
+      class="mainImage"
+      [src]="
+        item.mainImage ||
+        'https://static.hertz-audio.com/media/2021/05/no-product-image.png'
+      "
+      alt=""
+    />
+  </div>
+
+  <div class="item-body">
+    <div class="item-description">
+      <h3>{{ item.name }}</h3>
+      <h3>Descrição:</h3>
+      <p>{{ item.description | slice : 0 : 1000 }}</p>
+    </div>
+
+    <div class="item-info">
+      <h3>Informações adicionais:</h3>
+      <ul>
+        <li><strong>Preço:</strong> {{ item.price }}</li>
+        <li><strong>Tipo:</strong> {{ item.type }}</li>
+        <li><strong>Plataforma:</strong> {{ item.platform }}</li>
+        <li><strong>Idiomas:</strong> {{ item.languages }}</li>
+        <li><strong>Classificação geral:</strong> {{ item.overallRating }}</li>
+        <li><strong>Avaliações:</strong> </li>
+        <li *ngFor="let rating of item.ratings">
+          <strong>Avaliação:</strong> Nome: {{ rating.name }}, Rating: {{ rating.rating }}, Comentário: {{ rating.comment }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="item-media">
+      <h3>Mídia</h3>
+      <div class="item-images">
+        <img [src]="item.mainImage" alt="{{ item.name }}" />
+        <img
+          *ngFor="let str of item.secondaryImages"
+          [src]="item.secondaryImages"
+          alt="{{ item.name }}"
+        />
+      </div>
+      <div class="item-video">
+        <a href="item.video"> {{ item.video }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="button">
+    <button type="button" (click)="addItemToCart()">
+      Adicionar ao carrinho
+    </button>
+  </div>
+
+  <div class="button">
+    <button type="submit" (click)="addItemToWishlist()">
+      Adicionar à Wishlist
+    </button>
+  </div>
+  
+  <div class="button">
+    <button type="submit" (click)="showItemInfo()">Classify Item</button>
+  </div>
+
+  <div id="item-info" style="display: none">
+    <label for="item-rating">Item Rating:</label>
+    <input type="radio" id="rating-1" name="item-rating" value="1">
+    <label for="rating-1">1</label>
+    <input type="radio" id="rating-2" name="item-rating" value="2">
+    <label for="rating-2">2</label>
+    <input type="radio" id="rating-3" name="item-rating" value="3">
+    <label for="rating-3">3</label>
+    <input type="radio" id="rating-4" name="item-rating" value="4">
+    <label for="rating-4">4</label>
+    <input type="radio" id="rating-5" name="item-rating" value="5">
+    <label for="rating-5">5</label><br><br>
+    <label for="item-review">Item Review:</label>
+    <textarea id="item-review" name="item-review"></textarea><br><br>
+    <button (click)="submitItemInfo()">Submit</button>
+  </div>
+
+  <div class="button">
+    <button type="submit" (click)="dashboard()">Dashboard</button>
+  </div>
+  
+
+
+</div>

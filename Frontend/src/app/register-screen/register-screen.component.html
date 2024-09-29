@@ -1,0 +1,23 @@
+<html><link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+
+<div class="testbox">
+  <h1>Registration</h1>
+
+  <div class ="form">
+  <label class="icon" for="name2"><i class="icon-user"></i></label>
+  <input type="text" name="name" id="name2" placeholder="Name" required #name/>
+  <p class="input-requirements">Só pode ter caracteres alfanuméricos e deve ter três caracteres no mínimo</p>
+  <label class="icon" for="name3"><i class="icon-shield"></i></label>
+  <input type="password" name="name" id="name3" placeholder="Password" required #password1/>
+  <p class="input-requirements">Deve ter oito ou mais caracteres, incluindo pelo menos uma letra maiúscula, uma letra minúscula e um algarismo</p>
+  <label class="icon" for="name4"><i class="icon-shield"></i></label>
+  <input type="password" name="name" id="name4" placeholder="Retype Password" required #password2/>
+  <div class="button-container">
+    <button type="submit" (click)="register(name.value,password1.value,password2.value);">Registar</button>
+  </div>
+  <p [ngClass]="{'sucesso': registerMessage === 'Sucesso'}">{{registerMessage}}</p>
+</div>
+</div>
+<button class="go-back" type="submit" (click)="goLogin();">&lt;-</button></html>

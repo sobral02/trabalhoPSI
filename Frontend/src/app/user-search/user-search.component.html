@@ -1,0 +1,21 @@
+<div class="compContainer">
+    <h3>Pesquisa de Utilizadores</h3>
+    <p>&nbsp;</p>
+    <div class="form-container">
+        <form>
+            <div class="form-group">
+                <label for="ufilter"> User Name</label>
+                <input type="text" class="form-control" id="ufilter" name="ufilter" required [(ngModel)]="ufilter">
+
+            </div>
+            <button (click)="pesquisar()"> Pesquisar:</button>
+        </form>
+    </div>
+    <p>&nbsp;</p>
+    <div *ngIf="showMessage">Não existe utilizador que correspondem a esse filtro.</div>
+    <div class="user-list">
+        <ul>
+            <li *ngFor="let u of filteredUsers"><button (click)="goProfile(u.name)">{{u.name}}</button></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+.item-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+img {
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #333;
+    margin-right: 20px;
+}
+
+.item-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.item-type {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.item-description {
+    margin-bottom: 0px;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.item-platforms {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.item-languages {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.item-price {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.item-rating {
+    margin-bottom: 10px;
+}
+
+.item-rating label {
+    font-size: 18px;
+}
+
+.item-rating input[type="radio"] {
+    display: none;
+}
+
+.item-rating label:before {
+    content: "★";
+    font-size: 24px;
+    margin-right: 5px;
+    color: #ddd;
+}
+
+.item-rating input[type="radio"]:checked~label:before {
+    color: #f7d50c;
+}
+
+.item-reviews {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.item-more {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.item-more a {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.item-more a:hover {
+    text-decoration: underline;
+}
+
+.button button {
+    margin-top: 2rem;
+    width: 10%;
+    height: 2%;
+    background: #0091ea;
+    color: #ffff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button:focus {
+    outline: 1px solid red;
+    box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.5);
+  }

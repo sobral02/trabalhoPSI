@@ -1,0 +1,9 @@
+<h1>Minha Wishlist</h1>
+<div class="wishlist-container">
+  {{message}}
+  <button (click)="goToItem(item)" *ngFor="let item of items">{{item}}</button>
+</div>
+
+<div class="button">
+  <button (click)="dashboard()">Dashboard</button>
+</div>

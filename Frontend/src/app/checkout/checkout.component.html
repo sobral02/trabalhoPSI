@@ -1,0 +1,54 @@
+
+
+
+<h1>Por favor insira os seguintes dados:</h1>
+
+  <div>
+    <label>Morada:</label>
+    <input type="text" required>
+  </div>
+  <div>
+    <label>NIF:</label>
+    <input type="text" required>
+    <div *ngIf="checkoutForm.get('nif')?.invalid">O NIF é obrigatório.</div>
+  </div>
+
+<div class="payment-dialog" #paymentDialog>
+  <p>Selecione o método de pagamento:<p>
+  <button (click)="openMbway()">MBWay</button>
+  <button (click)="openCredit()">Cartao de credito</button>
+</div>
+
+
+<div id="mbway-form" style="display: none;">
+  <h3>Insira o número de telefone</h3>
+  <input type="text" id="phone-number">
+</div>
+
+
+<div id="credit-form" style="display: none;">
+  <h2>Insira os dados do cartão</h2>
+  <div>
+    <label>Número do cartão:</label>
+    <input type="text" id="card-number">
+  </div>
+  <div>
+    <label>Validade:</label>
+    <input type="text" id="expiration-date">
+    </div>
+  <div>
+    <label>CCV:</label>
+    <input type="text" id="ccv">
+  </div>
+</div>
+
+<button (click)="checkout()">Finalizar Compra</button>
+
+<div *ngIf="isclicked">
+<div *ngIf="isSuccessful">Compra bem-sucedida!</div>
+<div *ngIf="!isSuccessful">Compra falhou.</div>
+</div>
+
+<div class="button">
+  <button (click)="dashboard()">Dashboard</button>
+</div>

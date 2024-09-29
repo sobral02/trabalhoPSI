@@ -1,0 +1,9 @@
+<h1>Library de {{name}}</h1>
+<button (click)="swapSort()" *ngIf="!message">Ordenar {{modo}}</button>
+<div class="library-container">
+    {{message}}
+    <button (click)="goToItem(item)"  *ngFor="let item of library">{{item}}</button>
+</div>
+<div class="button">
+    <button (click)="dashboard()">Dashboard</button>
+</div>
